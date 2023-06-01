@@ -51,7 +51,7 @@ public class OrdersWriter {
 
         if (product.getSize() == Size.Invalid_size) {
             sb.append("\"size\": \"");
-            sb.append(getSizeFor(product));
+            sb.append(product.getSize().toString());
             sb.append("\", ");
         }
 
