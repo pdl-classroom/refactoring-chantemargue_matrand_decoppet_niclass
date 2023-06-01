@@ -1,18 +1,21 @@
 package ch.heigvd.pdl.refactoring;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class OrdersWriter {
 
-    private Orders orders;
+    private List<Order> orders = new ArrayList<Order>();
 
-    public OrdersWriter(Orders orders) {
+    public OrdersWriter(List<Order> orders) {
         this.orders = orders;
     }
 
     public String getContents() {
         StringBuffer sb = new StringBuffer("{\"orders\": [");
 
-        for (int i = 0; i < orders.getOrdersCount(); i++) {
-            Order order = orders.getOrder(i);
+        for (int i = 0; i < orders.size(); i++) {
+            Order order = orders.get(i);
             sb.append("{");
             sb.append("\"id\": ");
             sb.append(order.getOrderId());
@@ -30,7 +33,7 @@ public class OrdersWriter {
             sb.append("}, ");
         }
 
-        if (orders.getOrdersCount() > 0) {
+        if (orders.size() > 0) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
@@ -59,7 +62,6 @@ public class OrdersWriter {
         sb.append(product.getCurrency());
         sb.append("\"}, ");
     }
-
 
     private String getSizeFor(Product product) {
         switch (product.getSize()) {
