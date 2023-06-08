@@ -19,7 +19,7 @@ public class OrdersWriter {
             sb.append(", ");
         }
 
-        if (orders.size() > 0) {
+        if (!orders.isEmpty()) {
             sb.delete(sb.length() - 2, sb.length());
         }
 
