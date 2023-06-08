@@ -37,4 +37,63 @@ public class Product {
     public String getCurrency() {
         return currency;
     }
+
+    public String toJsonString() {
+        StringBuffer sb = new StringBuffer("");
+
+        sb.append("{");
+        sb.append("\"code\": \"");
+        sb.append(this.getCode());
+        sb.append("\", ");
+        sb.append("\"color\": \"");
+        sb.append(this.getColorString());
+        sb.append("\", ");
+
+        if (this.getSize() != Product.SIZE_NOT_APPLICABLE) {
+            sb.append("\"size\": \"");
+            sb.append(this.getSizeString());
+            sb.append("\", ");
+        }
+
+        sb.append("\"price\": ");
+        sb.append(this.getPrice());
+        sb.append(", ");
+        sb.append("\"currency\": \"");
+        sb.append(this.getCurrency());
+        sb.append("\"}");
+
+        return sb.toString();
+    }
+
+    public String getSizeString() {
+        switch (this.getSize()) {
+            case 1:
+                return "XS";
+            case 2:
+                return "S";
+            case 3:
+                return "M";
+            case 4:
+                return "L";
+            case 5:
+                return "XL";
+            case 6:
+                return "XXL";
+            default:
+                return "Invalid Size";
+        }
+    }
+
+    public String getColorString() {
+        switch (this.getColor()) {
+            case 1:
+                return "blue";
+            case 2:
+                return "red";
+            case 3:
+                return "yellow";
+            default:
+                return "no color";
+        }
+    }
 }
