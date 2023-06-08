@@ -47,7 +47,7 @@ public class Product {
         sb.append(this.getColor());
         sb.append("\", ");
 
-        if (this.getSize() != Size.Invalid_size) {
+        if (this.getSize() != Size.InvalidSize) {
             sb.append("\"size\": \"");
             sb.append(this.getSize());
             sb.append("\", ");
