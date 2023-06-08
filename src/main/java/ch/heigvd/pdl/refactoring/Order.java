@@ -28,7 +28,7 @@ public class Order {
     }
 
     public String toJsonString() {
-        StringBuffer sb = new StringBuffer("");
+        StringBuilder sb = new StringBuilder("");
 
         sb.append("{");
         sb.append("\"id\": ");
