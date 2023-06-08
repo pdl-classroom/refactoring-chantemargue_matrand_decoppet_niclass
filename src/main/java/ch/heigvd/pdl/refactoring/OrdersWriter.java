@@ -12,7 +12,7 @@ public class OrdersWriter {
     }
 
     public String getContents() {
-        StringBuffer sb = new StringBuffer("{\"orders\": [");
+        StringBuilder sb = new StringBuilder("{\"orders\": [");
 
         for (int i = 0; i < orders.size(); i++) {
             sb.append(orders.get(i).toJsonString());

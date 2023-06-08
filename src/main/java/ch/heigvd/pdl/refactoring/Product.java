@@ -37,7 +37,7 @@ public class Product {
     }
 
     public String toJsonString() {
-        StringBuffer sb = new StringBuffer("");
+        StringBuilder sb = new StringBuilder("");
 
         sb.append("{");
         sb.append("\"code\": \"");
